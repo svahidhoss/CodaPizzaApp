@@ -40,10 +40,12 @@ fun ToppingCell(
                 text = stringResource(topping.toppingName),
                 style = MaterialTheme.typography.bodyLarge
             )
-            Text(
-                text = "Whole Pizza",
-                style = MaterialTheme.typography.bodyMedium
-            )
+            if (placement != null) {
+                Text(
+                    text = stringResource(placement.label),
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
         }
     }
 }
