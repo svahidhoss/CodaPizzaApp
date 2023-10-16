@@ -3,8 +3,10 @@ package com.bignerdranch.android.codapizza.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Checkbox
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.bignerdranch.android.codapizza.model.Topping
@@ -27,15 +29,21 @@ fun ToppingCell(
     placement: ToppingPlacement?,
     onClickTopping: () -> Unit
 ) {
-    Row {
+    Row(verticalAlignment = Alignment.CenterVertically) {
         Checkbox(
             checked = placement != null,
             onCheckedChange = {}
         )
 
         Column {
-            Text(text = stringResource(topping.toppingName))
-            Text(text = "Whole Pizza")
+            Text(
+                text = stringResource(topping.toppingName),
+                style = MaterialTheme.typography.bodyLarge
+            )
+            Text(
+                text = "Whole Pizza",
+                style = MaterialTheme.typography.bodyMedium
+            )
         }
     }
 }
