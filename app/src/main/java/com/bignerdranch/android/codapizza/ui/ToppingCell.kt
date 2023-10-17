@@ -1,7 +1,10 @@
 package com.bignerdranch.android.codapizza.ui
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -12,6 +15,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.bignerdranch.android.codapizza.model.Topping
 import com.bignerdranch.android.codapizza.model.ToppingPlacement
 
+
+@Preview
+@Composable
+private fun ToppingCellPreviewNotOnPizza() {
+    ToppingCell(
+        topping = Topping.Pepperoni,
+        placement = null,
+        onClickTopping = {}
+    )
+}
 
 @Preview
 @Composable
