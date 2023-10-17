@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
             CodaPizzaTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+//                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     ToppingCell(
