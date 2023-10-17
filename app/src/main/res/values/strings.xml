@@ -2,6 +2,8 @@
     <string name="app_name">CodaPizza</string>
     <string name="title_activity_main">MainActivity</string>
 
+    <string name="place_order_button">Place Order</string>
+
     <string name="placement_none">None</string>
     <string name="placement_left">Left half</string>
     <string name="placement_right">Right half</string>
