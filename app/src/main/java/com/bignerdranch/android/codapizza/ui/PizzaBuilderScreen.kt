@@ -28,13 +28,13 @@ fun PizzaBuilderScreen(
                 .fillMaxWidth()
                 .weight(1f, fill = true)
         )
-    }
 
-    OrderButton(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp)
-    )
+        OrderButton(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp)
+        )
+    }
 }
 
 @Composable
