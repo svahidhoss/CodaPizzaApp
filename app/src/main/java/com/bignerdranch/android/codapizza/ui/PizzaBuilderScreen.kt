@@ -44,7 +44,7 @@ private fun ToppingsList(
     LazyColumn(
         modifier = modifier
     ) {
-        items(Topping.values()) { topping ->
+        items(Topping.entries.toTypedArray()) { topping ->
             ToppingCell(
                 topping = topping,
                 placement = ToppingPlacement.Left,
@@ -68,7 +68,7 @@ private fun OrderButton(
     ) {
         Text(
             text = stringResource(R.string.place_order_button)
-                .toUpperCase(Locale.CANADA)
+                .uppercase(Locale.CANADA)
         )
     }
 }
