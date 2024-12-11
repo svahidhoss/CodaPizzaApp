@@ -1,5 +1,6 @@
 package com.bignerdranch.android.codapizza.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -45,6 +46,10 @@ private var pizza =
             Topping.Pineapple to ToppingPlacement.All
         )
     )
+    set(value) {
+        Log.d("PizzaBuilderScreen", "Reassigned pizza to $value")
+        field = value
+    }
 
 @Composable
 private fun ToppingsList(
@@ -58,7 +63,15 @@ private fun ToppingsList(
                 topping = topping,
                 placement = pizza.toppings[topping],
                 onClickTopping = {
-                    // TODO
+                    val isOnPizza = pizza.toppings[topping] != null
+                    pizza = pizza.withTopping(
+                        topping = topping,
+                        placement = if (isOnPizza) {
+                            null
+                        } else {
+                            ToppingPlacement.All
+                        }
+                    )
                 }
             )
         }
