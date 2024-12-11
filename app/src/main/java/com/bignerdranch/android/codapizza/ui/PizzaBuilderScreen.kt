@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bignerdranch.android.codapizza.R
+import com.bignerdranch.android.codapizza.model.Pizza
 import com.bignerdranch.android.codapizza.model.Topping
 import com.bignerdranch.android.codapizza.model.ToppingPlacement
 import java.util.Locale
@@ -37,6 +38,14 @@ fun PizzaBuilderScreen(
     }
 }
 
+private var pizza =
+    Pizza(
+        toppings = mapOf(
+            Topping.Pepperoni to ToppingPlacement.All,
+            Topping.Pineapple to ToppingPlacement.All
+        )
+    )
+
 @Composable
 private fun ToppingsList(
     modifier: Modifier = Modifier
@@ -47,7 +56,7 @@ private fun ToppingsList(
         items(Topping.entries.toTypedArray()) { topping ->
             ToppingCell(
                 topping = topping,
-                placement = ToppingPlacement.Left,
+                placement = pizza.toppings[topping],
                 onClickTopping = {
                     // TODO
                 }
